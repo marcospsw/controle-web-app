@@ -1,0 +1,39 @@
+<div class="container">
+  <a
+    class="profile-container"
+    href="https://www.linkedin.com/in/marcos-wergles/"
+    target="_blank"
+  >
+    <img
+      class="profile-container--logo"
+      src="assets/img/logo.png"
+      alt="Logo Pokedex"
+    />
+  </a>
+  <nav>
+    <ul class="menu">
+      <li routerLink="/earnings" routerLinkActive="ativo">Ganhos</li>
+      <li routerLink="/expenses" routerLinkActive="ativo">Despesas</li>
+      <li routerLink="/months" routerLinkActive="ativo">Mes</li>
+      <li routerLink="/years" routerLinkActive="ativo">Ano</li>
+      <div *ngIf="user$ | async as user">
+        <div *ngIf="user.name; else login" class="login">
+          <li (click)="logout()" class="ativo">Logout</li>
+          <img
+            class="avatar avatar--login"
+            [src]="user.avatar ? user.avatar : 'assets/img/avatar.jpg'"
+            alt="Profile photo"
+            routerLink="/edit"
+          />
+        </div>
+      </div>
+    </ul>
+  </nav>
+</div>
+
+<ng-template #login>
+  <div class="login" #login>
+    <li routerLink="/login" routerLinkActive="ativo">Login</li>
+    <img class="avatar" src="assets/img/avatar.jpg" alt="Profile photo" />
+  </div>
+</ng-template>

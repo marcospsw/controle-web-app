@@ -1,0 +1,65 @@
+@import "includes.scss";
+
+.container {
+  background-color: $cyan-800;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 15vh;
+  padding: 0 3rem;
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;
+
+  &--logo {
+    width: 40vh;
+  }
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  li {
+    font-size: 1.5rem;
+    font-weight: $font-semi-bold;
+    padding: 0 1rem;
+    cursor: pointer;
+    text-shadow: 2px 2px #000000;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $green;
+    }
+  }
+
+  .ativo {
+    color: $green;
+  }
+
+  button {
+    margin-left: 2rem;
+  }
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar {
+  margin-top: 0.5rem;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+
+  &--login {
+    cursor: pointer;
+  }
+}
